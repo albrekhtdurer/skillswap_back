@@ -31,10 +31,10 @@ alembic upgrade head
 4. Запустить сервер:
 
 ```
-$ APP_SECRET=<secret> APP_HOST=0.0.0.0 APP_PORT=8000 uvicorn main:app --reload --host 0.0.0.0 --port 8000
+$ APP_SECRET=<secret> APP_HOST=127.0.0.1 APP_PORT=8000 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Сервер будет доступен по адресу `http://localhost:8000` или `http://0.0.0.0:8000`
+Сервер будет доступен по адресу `http://localhost:8000` или `http://127.0.0.1:8000`
 
 ## Локальный запуск через Docker-контейнер
 
