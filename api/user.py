@@ -13,11 +13,11 @@ from config import config
 from db.models.images import Image
 from db.models.skill import Skill
 from db.models.user import User
-from db_session import dbSession
-from hash_pwd import pwd_context
+from db.utils.db_session import dbSession
+from utils.hash_pwd import pwd_context
 from models.response import BaseResponse, CurrentUserResponse
 from models.user import RegisterUserInfo, UpdateUserInfo
-from prepare_user_data import prepare_current_user_data
+from utils.prepare_current_user_data import prepare_current_user_data
 
 router = APIRouter(prefix="/user", redirect_slashes=False)
 

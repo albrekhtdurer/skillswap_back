@@ -4,7 +4,7 @@ import json
 from sqlalchemy.orm import sessionmaker
 
 from db.models import City
-from db_engine import engine
+from db.utils.db_engine import engine
 
 Session = sessionmaker(bind=engine)
 session = Session()

@@ -4,10 +4,10 @@ from typing import List, Dict
 from fastapi import APIRouter
 
 from db.models import Image, Skill, Subcategory, User
-from db_session import dbSession
+from db.utils.db_session import dbSession
 from models.response import UsersResponse
 from models.user import UserInfo
-from prepare_full_user_data import prepare_full_user_data
+from utils.prepare_full_user_data import prepare_full_user_data
 
 router = APIRouter(prefix="/users", redirect_slashes=False)
 

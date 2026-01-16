@@ -7,8 +7,8 @@ from sqlalchemy.orm import sessionmaker
 
 from db.models import User
 from db.models.skill import Skill
-from db_engine import engine
-from hash_pwd import pwd_context
+from db.utils.db_engine import engine
+from utils.hash_pwd import pwd_context
 
 Session = sessionmaker(bind=engine)
 session = Session()

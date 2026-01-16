@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from db.models import City
-from db_session import dbSession
+from db.utils.db_session import dbSession
 from models.response import BaseResponse
 
 router = APIRouter(prefix="/cities", redirect_slashes=False)

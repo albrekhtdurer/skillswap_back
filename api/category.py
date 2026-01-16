@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from db.models import Category, Subcategory
-from db_session import dbSession
+from db.utils.db_session import dbSession
 from models.response import BaseResponse
 
 router = APIRouter(prefix="/categories", redirect_slashes=False)

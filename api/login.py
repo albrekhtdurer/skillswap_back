@@ -6,11 +6,11 @@ from fastapi_login.exceptions import InvalidCredentialsException
 
 from config import config
 from db.models.user import User
-from db_session import dbSession
-from hash_pwd import pwd_context
+from db.utils.db_session import dbSession
+from utils.hash_pwd import pwd_context
 from models.login import LoginInfo
 from models.response import BaseResponse, CurrentUserResponse
-from prepare_user_data import prepare_current_user_data
+from utils.prepare_current_user_data import prepare_current_user_data
 
 router = APIRouter(prefix="/auth")
 secret = config.secret

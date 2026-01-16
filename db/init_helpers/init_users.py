@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 from sqlalchemy.orm import sessionmaker
 
 from db.models import Image, User
-from db_engine import engine
+from db.utils.db_engine import engine
 
 Session = sessionmaker(bind=engine)
 session = Session()
