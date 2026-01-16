@@ -1,0 +1,10 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+exclude = ["alembic", "migrations", "venv", "servvenv"]
+
+show-fixes = true
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 120
