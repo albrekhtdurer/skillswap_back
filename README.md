@@ -1,53 +1,68 @@
-# SkillSwap - Платформа обмена навыками, бэкенд-часть
+# SkillSwap – Your Platform for Swapping Skills
 
-## Зависимости
+Backend for SkillSwap, a social network that enables users to learn new skills and share their expertise with others. The frontend is available [here](LINK).
 
-Для работы приложения необходимы:
+## Tech stack
+
+- Python, FastAPI, SQLite, SQLAlchemy, Alembic
+
+## Features
+
+Supported features:
+
+- Login and JWT access token generation.
+- Register new users and update user data.
+- Upload images (user avatars and skill images). Uploaded images are assigned new filenames, and a GET link is generated for each image.
+- Retrieve skills, cities, and categories data.
+
+## Dependencies
+
+The application requires the following dependencies to launch:
 
 - Python 3.12.3+
-- Docker (опционально, для деплоя через контейнер)
+- Docker (optional if deploying via a Docker container)
 
-## Локальный запуск
+## Local launch
 
-1. Создать и активировать виртуальное окружение (рекомендуется для правильной установки зависимостей)
+1. Create and activate a virtual environment (recommended for correct dependency installation):
 
-```
+```bash
 python -m venv venv
 source venv/bin/activate
 ```
 
-2. Установить зависимости
+2. Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
-3. Запустить миграции БД:
+3. Run DB migrations:
 
-```
+```bash
 alembic upgrade head
 ```
 
-4. Запустить сервер:
+4. Run the server:
 
+```bash
+APP_SECRET=<secret> APP_HOST=127.0.0.1 APP_PORT=8000 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
-$ APP_SECRET=<secret> APP_HOST=127.0.0.1 APP_PORT=8000 uvicorn main:app --reload --host 127.0.0.1 --port 8000
-```
 
-Сервер будет доступен по адресу `http://localhost:8000` или `http://127.0.0.1:8000`
+The server will be available at `http://localhost:8000` or `http://127.0.0.1:8000`.
 
-## Локальный запуск через Docker-контейнер
+## Local launch via Docker
 
-1. Запустить контейнер
+1. Run the container:
 
-```
+```bash
 make up
 ```
 
-Сервер будет доступен по адресу `http://localhost:8000` или `http://0.0.0.0:8000`
+The server will be available at `http://localhost:8000` or `http://0.0.0.0:8000`.
 
-## Решение проблем
+## Troubleshooting
 
-При проблемах с загрузкой картинок (аватарки/картинки пользователя):
+If images don't upload correctly:
 
-- Создать папку `/opt/uploaded_files` и предоставить к ней права доступа для текущего пользователя
+- Create the `/opt/uploaded_files` folder and grant the current user read/write access rights.
